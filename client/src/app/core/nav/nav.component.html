@@ -6,7 +6,11 @@
       <a class="navbar-brand" routerLink='/'>QuickQuiz</a>
 
 
-        <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/errors' routerLinkActive="active">Errors</a>
+          </li>
+        </ul>
 
         <div class="dropdown ml-auto mt-auto mb-auto" *ngIf="accountService.currentUser$ | async" dropdown>
           <a class="dropdown-toggle text-light" dropdownToggle>Welcome user</a>
