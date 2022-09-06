@@ -1,0 +1,41 @@
+.main-theme {
+  --background-color: var(--white);
+  --background-color-alternate: #fcfcfc;
+  --background-color-shaded: var(--very-light-grey);
+  --background-color-dark: #0c7ba4;
+  --background-color-dark-highlighted: #e8eaee;
+
+  --text-light: var(--black);
+  --text-light-faded: var(--light-grey);
+  --text-dark: var(--dark-grey);
+  --text-dark-faded: var(--mid-grey);
+
+  --input-text:var(--black);
+  --input-label-light: var(--very-light-grey);
+  --input-label-dark: var(--mid-grey);
+  --input-border: var(--light-grey);
+  --input-textbox: var(--white);
+  --input-hint: var(--light-grey);
+
+  --button-text: var(--white);
+  --button-border: var(--primary-light);
+  --button-background: var(--primary);
+  --button-disabled-background: var(--very-light-grey);
+  --button-disabled-text: var(--light-grey);
+  --button-disabled-border: var(--light-grey);
+
+  --primary: #13afe7;
+  --secondary: #39a2c9;
+  --primary-very-light: #b8dfee;
+  --primary-light: #29aedf;
+  --primary-dark: #3d8db4;
+
+  --link-light: #A1C5E5;
+  --link: #428BCA;
+  --link-dark: #2a6496;
+
+  --error: #dc3545;
+  --error-light: #ff9292;
+  --success: #00c251;
+  --success-light: #02b94e;
+}

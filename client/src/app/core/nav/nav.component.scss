@@ -1,0 +1,11 @@
+@import '../../styles/colors.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/variables.scss';
+
+.dropdown, .dropdown-item:hover {
+  cursor: pointer;
+}
+.navbar-brand{
+  color: $color--primary;
+  font-size: $font-size--heading;
+}

@@ -1,0 +1,38 @@
+@use "sass:math";
+@import './colors.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/** 2. Layout **/
+
+$sub-section-margin: 1.07rem;
+$section-margin: 1.13rem;
+$gutters: $sub-section-margin;
+
+/** 3. Typography **/
+:root {
+    --root-font-size: 14px;
+}
+$main-font-family: 'Roboto';
+$font-size--main: var(--root-font-size);
+$font-size--heading: 2.714em;
+/* Font sizes are relative to the base font size,
+    but the numbering is assuming the base size is 14px */
+$font-size-11: 0.785rem;
+$font-size-12: 0.857rem;
+$font-size-14: 1rem;
+
+$font-size-details: $font-size-14;
+$font-size--feature: 1.15rem;
+$info-label-font-size: $font-size-14;
+
+/** 4. Inputs **/
+
+$input-label-font-size: $font-size-14;
+$input-font-size: $font-size-14;
+$input-inner-padding: 5px;
+$input-hint-height: 1.2rem;
+$input-minimum-spacing: math.div($sub-section-margin, 2);
+$input-margin-bottom: calc(#{$input-hint-height} + #{$input-minimum-spacing});
+
+

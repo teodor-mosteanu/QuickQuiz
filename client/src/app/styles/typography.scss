@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+p {
+  margin-bottom: .5em;
+  &:last-of-type{
+      margin-bottom: $section-margin;
+  }
+}
+
+.text-primary {
+  color: $color--primary
+}
+.text-small {
+  font-size: $font-size-details;
+}
+
+.page-heading{
+  font-size: $font-size--heading;
+  display: inline-block;
+  padding: 5px;
+  align-self: center;
+}
+
+h1 {
+  font-size: $font-size--heading;
+  color:  $color--text-dark;
+  margin-bottom: $section-margin;
+}

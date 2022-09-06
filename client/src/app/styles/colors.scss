@@ -1,0 +1,56 @@
+:root{
+  --white: white;
+  --black: black;
+  --very-light-grey: #f2f2f2;
+  --light-grey: #b2b3b5;
+  --mid-grey: #848484;
+  --mid-dark-grey: #6a626d;
+  --dark-grey: #2e363f;
+}
+
+@import '../styles/themes/main-theme.scss';
+
+$color--primary: var(--primary);
+$color--primary-dark: var(--primary-dark);
+$color--primary-light: var(--primary-light);
+
+$color--secondary: var(--secondary);
+
+/******** General *********/
+$color--background: var(--background-color);
+$color--background-shaded: var(--background-color-shaded);
+
+$color--background-dark: var(--background-color-dark);
+
+$color--box-shadow: rgb(85, 85, 85);
+
+$color--text-light: var(--text-light);
+$color--text-dark: var(--text-dark);
+
+$color--error: var(--error);
+$color--error-light: var(--error-light);
+
+$color--link: var(--link);
+$color--link-light: var(--link-light);
+$color--link-hover: var(--link-dark);
+
+$color--success: var(--success);
+$color--success-light: var(--success);
+
+/******** FORM *********/
+$color--input-text: var(--input-text);
+$color--input-text-contrast: var(--white);
+$color--input-label-light: var(--input-label-light);
+$color--input-label-dark: var(--input-label-dark);
+$color--input-border: var(--input-border);
+$color--input-textbox-background: var(--input-textbox);
+$color--input-hint: var(--input-hint);
+$color--input-placeholder: var(--input-placeholder);
+
+$color--button-background: var(--button-background);
+$color--button-text: var(--button-text);
+
+/****** top nav bar ******/
+$color--nav-button-hover-background: var(--nav-button-hover-background-color);
+$color--nav-button-text: var(--nav-button-text-color);
+$color--nav-button-hover-text: var(--nav-button-hover-text-color);

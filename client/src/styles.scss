@@ -5,3 +5,33 @@
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+
+@import "./app/styles/variables.scss";
+@import "./app/styles/typography.scss";
+@import "./app/styles/colors.scss";
+
+html {
+  font-size: $font-size--main;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // height: 100%;
+  // width: 100%;
+}
+body {
+  font-family: $main-font-family;
+  font-size: $font-size--main;
+  font-weight: 400;
+  background-color: $color--background;
+  color: $color--text-dark
+}
+
+button.btn {
+  font-family: inherit;
+  font-size: $font-size--main;
+  color: $color--button-text;
+  background-color: $color--button-background;
+}

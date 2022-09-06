@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+
+    <div class="container-fluid d-flex">
+
+      <a class="navbar-brand" routerLink='/'>QuickQuiz</a>
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
+
+        <div class="dropdown ml-auto mt-auto mb-auto" *ngIf="accountService.currentUser$ | async" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle>Welcome user</a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" routerLink='/tests' >View all tests</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+
+
+        <ng-container *ngIf="(accountService.currentUser$ | async) === null" >
+          <form
+            class="d-flex ml-auto"
+            #loginForm="ngForm"
+            (ngSubmit)="login()"
+            autocomplete="off"
+          >
+            <input
+              name="username"
+              [(ngModel)]="model.username"
+              class="form-control me-2 mr-2"
+              type="text"
+              placeholder="Username"
+              aria-label="Username"
+            />
+            <input
+              name="password"
+              [(ngModel)]="model.password"
+              class="form-control me-2 mr-2"
+              type="password"
+              placeholder="Password"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">Login</button>
+          </form>
+        </ng-container>
+
+    </div>
+  </div>
+</nav>
