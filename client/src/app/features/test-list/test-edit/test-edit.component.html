@@ -1,0 +1,239 @@
+<h1 class="page-heading">{{ quizName }}</h1>
+
+<div class="container">
+  <mat-card class="example-card mt-2" *ngFor="let question of questions">
+    <mat-card-title>{{ question.questionText }}</mat-card-title>
+    <mat-card-content class="mt-3">
+      <ul class="list-group">
+        <li
+          *ngIf="question.a"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'A'"
+        >
+          A. {{ question.a }}
+        </li>
+        <li
+          *ngIf="question.b"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'B'"
+        >
+          B. {{ question.b }}
+        </li>
+        <li
+          *ngIf="question.c"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'C'"
+        >
+          C. {{ question.c }}
+        </li>
+        <li
+          *ngIf="question.d"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'D'"
+        >
+          D. {{ question.d }}
+        </li>
+        <li
+          *ngIf="question.e"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'E'"
+        >
+          E. {{ question.e }}
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        class="btn"
+        mat-button
+        *appHasRole="['View', 'Edit']"
+        (click)="viewCorrectAnswer(question.id)"
+        [disabled]="correctAnswers[question.id]"
+      >
+        View correct answer
+      </button>
+      <button
+        class="btn space"
+        mat-button
+        *appHasRole="['Edit']"
+        (click)="editQuestion(question)"
+      >
+        Edit question
+      </button>
+      <button
+        class="btn space"
+        mat-button
+        *appHasRole="['Edit']"
+        (click)="deleteQuestion(question.id)"
+      >
+        Delete question
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<mat-card class="example-card mt-5 mb-5" *appHasRole="['Edit']">
+  <mat-card-title>Add new question</mat-card-title>
+  <mat-card-content class="mt-4">
+    <form
+      #newQuestionForm="ngForm"
+      (ngSubmit)="addQuestion()"
+      autocomplete="off"
+      class="d-flex flex-column"
+    >
+      <div class="row">
+        <label for="questionForm">Question description</label>
+        <input
+          required
+          id="questionText"
+          name="questionText"
+          [(ngModel)]="questionForm.questionText"
+          class="form-control me-2 mr-2 mb-2 mt-2"
+          type="text"
+          placeholder="Question Text"
+          aria-label="Question Text"
+        />
+      </div>
+      <div class="row">
+        <input
+          required
+          id="A"
+          name="A"
+          [(ngModel)]="questionForm.A"
+          class="form-control me-2 mr-2 mb-2 answer"
+          type="text"
+          placeholder="Answer A"
+          aria-label="Answer A"
+        />
+        <div class="correct-container" *ngIf="questionForm.A">
+          <input
+            type="radio"
+            id="correctA"
+            name="correctAnswerForm"
+            value="A"
+            class="mb-2 radio-input"
+            title="A"
+            [(ngModel)]="correctAnswerForm"
+          />
+          <label for="A" class="radio-input mt-2">Correct</label>
+        </div>
+      </div>
+      <div class="row">
+        <input
+          required
+          id="B"
+          name="B"
+          [(ngModel)]="questionForm.B"
+          class="form-control me-2 mr-2 mb-2 answer"
+          type="text"
+          placeholder="Answer B"
+          aria-label="Answer B"
+        />
+        <div class="correct-container" *ngIf="questionForm.B">
+          <input
+            type="radio"
+            id="correctB"
+            name="correctAnswerForm"
+            value="B"
+            class="mb-2 radio-input"
+            title="B"
+            [(ngModel)]="correctAnswerForm"
+          />
+          <label for="B" class="radio-input mt-2">Correct</label>
+        </div>
+      </div>
+      <div class="row">
+        <input
+          required
+          id="C"
+          name="C"
+          [(ngModel)]="questionForm.C"
+          class="form-control me-2 mr-2 mb-2 answer"
+          type="text"
+          placeholder="Answer C"
+          aria-label="Answer C"
+        />
+        <div class="correct-container" *ngIf="questionForm.C">
+          <input
+            type="radio"
+            id="correctC"
+            name="correctAnswerForm"
+            value="C"
+            class="mb-2 radio-input"
+            title="C"
+            [(ngModel)]="correctAnswerForm"
+          />
+          <label for="C" class="radio-input mt-2">Correct</label>
+        </div>
+      </div>
+      <div class="row">
+        <input
+          id="D"
+          name="D"
+          [(ngModel)]="questionForm.D"
+          class="form-control me-2 mr-2 mb-2 answer"
+          type="text"
+          placeholder="Answer D"
+          aria-label="Answer D"
+        />
+        <div class="correct-container" *ngIf="questionForm.D">
+          <input
+            type="radio"
+            id="correctD"
+            name="correctAnswerForm"
+            value="D"
+            class="mb-2 radio-input"
+            title="D"
+            [(ngModel)]="correctAnswerForm"
+          />
+          <label for="D" class="radio-input mt-2">Correct</label>
+        </div>
+      </div>
+      <div class="row">
+        <input
+          id="E"
+          name="E"
+          [(ngModel)]="questionForm.E"
+          class="form-control me-2 mr-2 mb-2 answer"
+          type="text"
+          placeholder="Answer E"
+          aria-label="Answer E"
+        />
+        <div class="correct-container" *ngIf="questionForm.E">
+          <input
+            type="radio"
+            id="correctE"
+            name="correctAnswerForm"
+            value="E"
+            class="mb-2 radio-input"
+            title="E"
+            [(ngModel)]="correctAnswerForm"
+          />
+          <label for="E" class="radio-input mt-2">Correct</label>
+        </div>
+      </div>
+      <div
+        *ngIf="
+          newQuestionForm.invalid &&
+          (newQuestionForm.dirty || newQuestionForm.touched)
+        "
+        class="alert"
+      >
+        <div>Please fill all requiered fields.</div>
+      </div>
+
+      <button
+        class="btn btn-outline-success"
+        type="submit"
+        [disabled]="newQuestionForm.invalid || correctAnswerForm == null"
+      >
+        Add
+      </button>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="d-flex"> </mat-card-actions>
+</mat-card>
+
+<div class="container mt-3 mb-3">
+  <button class="btn" routerLink="/tests">Back to Quiz List</button>
+</div>

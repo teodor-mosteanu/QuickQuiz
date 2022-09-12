@@ -1,1 +1,62 @@
-<p>test-details works!</p>
+<h1 class="page-heading">{{ testName }}</h1>
+
+<div class="container">
+  <mat-card class="example-card mt-2" *ngFor="let question of questions">
+    <mat-card-title>{{ question.questionText }}</mat-card-title>
+    <mat-card-content class="mt-3">
+      <ul class="list-group">
+        <li
+          *ngIf="question.a"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'A'"
+        >
+          A. {{ question.a }}
+        </li>
+        <li
+          *ngIf="question.b"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'B'"
+        >
+          B. {{ question.b }}
+        </li>
+        <li
+          *ngIf="question.c"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'C'"
+        >
+          C. {{ question.c }}
+        </li>
+        <li
+          *ngIf="question.d"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'D'"
+        >
+          D. {{ question.d }}
+        </li>
+        <li
+          *ngIf="question.e"
+          class="list-group-item"
+          [class.corect-answer]="correctAnswers[question.id] === 'E'"
+        >
+          E. {{ question.e }}
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        class="btn"
+        mat-button
+        *appHasRole="['View', 'Edit']"
+        (click)="viewCorrectAnswer(question.id)"
+        [disabled]="correctAnswers[question.id]"
+      >
+        View correct answer
+      </button>
+      <!-- <button class="btn" mat-button *appHasRole=" 'Edit' " (click)="viewTest(test.id, test.name)">View correct answer</button> -->
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="container mt-3">
+  <button class="btn" routerLink="/tests">Back to Quiz List</button>
+</div>

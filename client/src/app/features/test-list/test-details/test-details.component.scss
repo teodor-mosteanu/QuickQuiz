@@ -1,0 +1,11 @@
+@import '../../../styles/typography.scss';
+@import '../../../styles/colors.scss';
+
+.list-group{
+  max-width: 50%;
+  min-width: 30%;
+}
+
+.corect-answer{
+  background-color: $color--background-alternate;
+}

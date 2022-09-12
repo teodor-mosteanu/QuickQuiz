@@ -1,1 +1,62 @@
-<p>test-list works!</p>
+<mat-card class="example-card mt-2" *ngFor="let test of tests">
+  <mat-card-title>{{ test.name }}</mat-card-title>
+  <mat-card-content class="mt-4">
+    <p>You can view the questions in the quiz by clicking the view button.</p>
+    <p *appHasRole="'Edit'">
+      You can edit the questions by clicking the edit button.
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="d-flex">
+    <button class="btn" (click)="viewTest(test.id, test.name)">View</button>
+    <button
+      class="btn margin-left"
+      *appHasRole="['Edit']"
+      (click)="editTest(test.id, test.name)"
+    >
+      Edit
+    </button>
+    <button
+      class="btn margin-left danger"
+      *appHasRole="['Edit']"
+      (click)="deleteTest(test.id, test.name)"
+    >
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card mt-5 mb-5" *appHasRole="['Edit']">
+  <mat-card-title>Add new quiz</mat-card-title>
+  <mat-card-content class="mt-4">
+    <form #newQuizForm="ngForm" (ngSubmit)="addTest()" autocomplete="off">
+      <label for="quizName">Quiz name</label>
+      <input
+        required
+        id="quizName"
+        name="quizName"
+        [(ngModel)]="newQuizName.quizName"
+        class="form-control me-2 mr-2 mb-2"
+        type="text"
+        placeholder="Quiz Name"
+        aria-label="Quiz Name"
+      />
+      <div
+        *ngIf="
+          newQuizForm.invalid && (newQuizForm.dirty || newQuizForm.touched)
+        "
+        class="alert"
+      >
+        <div>The name of the new quiz is required.</div>
+      </div>
+
+      <button
+        class="btn btn-outline-success"
+        type="submit"
+        [disabled]="newQuizForm.invalid"
+      >
+        Add
+      </button>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="d-flex"> </mat-card-actions>
+</mat-card>

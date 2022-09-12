@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TestErrorsComponent } from './errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    HasRoleDirective,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
   ],
   exports: [
     NavComponent,
+    HasRoleDirective,
+    RouterModule,
   ]
 })
 export class CoreModule { }

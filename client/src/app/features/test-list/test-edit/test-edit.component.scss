@@ -1,0 +1,41 @@
+@import '../../../styles/typography.scss';
+@import '../../../styles/colors.scss';
+
+.list-group{
+  max-width: 50%;
+  min-width: 30%;
+}
+
+.corect-answer{
+  background-color: $color--background-alternate;
+}
+.alert{
+  color:$color--error;
+}
+
+.answer{
+  margin-left: 2%;
+  width: 70%;
+}
+
+.radio-input{
+  width: 15px;
+}
+
+label{
+  font-size: 20px;
+  margin-left: 3px;
+}
+
+.btn[type=submit]{
+  width: 10%;
+}
+
+.space{
+  margin-left: 15px;
+}
+
+.correct-container{
+  width: 50px;
+  display: flex;
+}

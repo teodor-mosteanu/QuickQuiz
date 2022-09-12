@@ -35,3 +35,8 @@ button.btn {
   color: $color--button-text;
   background-color: $color--button-background;
 }
+
+button.danger {
+  color: $color--button-text;
+  background-color: $color--error;
+}

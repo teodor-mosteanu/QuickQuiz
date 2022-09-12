@@ -1,6 +1,6 @@
 .main-theme {
   --background-color: var(--white);
-  --background-color-alternate: #fcfcfc;
+  --background-color-alternate: #fcfcfc48;
   --background-color-shaded: var(--very-light-grey);
   --background-color-dark: #0c7ba4;
   --background-color-dark-highlighted: #e8eaee;
@@ -10,7 +10,7 @@
   --text-dark: var(--dark-grey);
   --text-dark-faded: var(--mid-grey);
 
-  --input-text:var(--black);
+  --input-text: var(--black);
   --input-label-light: var(--very-light-grey);
   --input-label-dark: var(--mid-grey);
   --input-border: var(--light-grey);
@@ -30,8 +30,8 @@
   --primary-light: #29aedf;
   --primary-dark: #3d8db4;
 
-  --link-light: #A1C5E5;
-  --link: #428BCA;
+  --link-light: #a1c5e5;
+  --link: #428bca;
   --link-dark: #2a6496;
 
   --error: #dc3545;

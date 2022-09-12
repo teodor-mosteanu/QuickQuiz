@@ -4,8 +4,10 @@ import { NotFoundComponent } from './core/errors/not-found/not-found.component';
 import { ServerErrorComponent } from './core/errors/server-error/server-error.component';
 import { TestErrorsComponent } from './core/errors/test-errors.component';
 import { AuthGuard } from './core/_guards/auth.guard';
+import { PermissionGuard } from './core/_guards/permission.guard';
 import { HomeComponent } from './features/home/home.component';
 import { TestDetailsComponent } from './features/test-list/test-details/test-details.component';
+import { TestEditComponent } from './features/test-list/test-edit/test-edit.component';
 import { TestListComponent } from './features/test-list/test-list.component';
 
 const routes: Routes = [
@@ -16,7 +18,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'tests', component: TestListComponent, canActivate:[AuthGuard]},
-      {path: 'tests/:id', component: TestDetailsComponent},
+      {path: 'testView/:test/:id', component: TestDetailsComponent, canActivate: [PermissionGuard]},
+      {path: 'testEdit/:test/:id', component: TestEditComponent, canActivate: [PermissionGuard]},
     ]
 
   },
